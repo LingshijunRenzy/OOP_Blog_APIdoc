@@ -177,3 +177,127 @@
         - likeID: 点赞 ID
         - articleID: 文章 ID
         - createTime: 点赞时间
+
+- 返回示例：
+    ```json
+    {
+        "code": 200,
+        "data": [
+        {
+            "likeID": 1,
+            "articleID": 1,
+            "createTime": "2021-01-01 00:00:00"
+        }
+        ]
+    }
+    ```
+
+### 获取用户关注列表
+- 请求方式：GET
+- 请求 URL：/api/user/follow
+- 请求参数：
+  - userID: 用户 ID
+  - page: 页码
+  - pageSize: 每页数量
+- 返回参数：
+    - code: 状态码
+    - data: 关注列表
+        - followID: 关注 ID
+        - followUserID: 被关注用户 ID
+        - createTime: 关注时间
+
+- 返回示例：
+    ```json
+    {
+        "code": 200,
+        "data": [
+        {
+            "followID": 1,
+            "followUserID": 2,
+            "createTime": "2021-01-01 00:00:00"
+        }
+        ]
+    }
+    ```
+
+### 获取用户粉丝列表
+- 请求方式：GET
+- 请求 URL：/api/user/fans
+- 请求参数：
+  - userID: 用户 ID
+  - page: 页码
+  - pageSize: 每页数量
+- 返回参数：
+    - code: 状态码
+    - data: 粉丝列表
+        - fansID: 粉丝 ID
+        - fansUserID: 粉丝用户 ID
+        - createTime: 关注时间
+
+- 返回示例：
+    ```json
+    {
+        "code": 200,
+        "data": [
+        {
+            "fansID": 1,
+            "fansUserID": 2,
+            "createTime": "2021-01-01 00:00:00"
+        }
+        ]
+    }
+    ```
+  
+### 设置用户个性设置
+- 请求方式：POST
+- 请求 URL：/api/user/setting
+- 请求参数：
+  - userID: 用户 ID
+  - theme: 用户主题
+  - isShowComment: 是否显示评论
+  - isShowLike: 是否显示点赞
+  - isShowFollow: 是否显示关注
+  - isShowFans: 是否显示粉丝
+  - isShowArticle: 是否显示文章
+- 返回参数：
+    - code: 状态码
+    - message: 提示信息
+
+- 返回示例：
+    ```json
+    {
+        "code": 200,
+        "message": "设置成功"
+    }
+    ```
+
+### 修改用户信息
+- 请求方式：POST
+- 请求 URL：/api/user
+- 请求参数：
+  - userID: 用户 ID
+  - nickname: 用户昵称
+  - avatar: 用户头像
+  - email: 用户邮箱
+  - introduction: 用户个人简介
+  - signature: 用户个性签名
+- 返回参数：
+    - code: 状态码
+    - message: 提示信息
+
+- 返回示例：
+    ```json
+    {
+        "code": 200,
+        "message": "修改成功"
+    }
+    ```
+
+## 文章相关接口
+
+### 获取文章列表
+- 请求方式：GET
+- 请求 URL：/api/article
+- 请求参数：
+  - page: 页码
+  - pageSize: 每页数量
