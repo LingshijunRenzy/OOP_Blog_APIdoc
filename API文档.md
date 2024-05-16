@@ -301,3 +301,60 @@
 - 请求参数：
   - page: 页码
   - pageSize: 每页数量
+- 返回参数：
+    - code: 状态码
+    - data: 文章列表
+        - articleID: 文章 ID
+        - title: 文章标题
+        - summary: 文章摘要
+        - cover: 文章封面
+        - createTime: 文章创建时间
+        - updateTime: 文章更新时间
+        - likeCount: 文章点赞数
+        - commentCount: 文章评论数
+        - viewCount: 文章浏览数
+        - isTop: 是否置顶
+        - isPublish: 是否发布
+
+- 返回示例：
+    ```json
+    {
+        "code": 200,
+        "data": [
+        {
+            "articleID": 1,
+            "title": "文章标题",
+            "summary": "文章摘要",
+            "cover": "https://www.maoshuxiaowo.com/cover.jpg",
+            "createTime": "2021-01-01 00:00:00",
+            "updateTime": "2021-01-01 00:00:00",
+            "likeCount": 10,
+            "commentCount": 20,
+            "viewCount": 30,
+            "isTop": true,
+            "isPublish": true
+        }
+        ]
+    }
+    ```
+
+
+### 获取文章详情
+- 请求方式：GET
+- 请求 URL：/api/article/detail
+- 请求参数：
+  - articleID: 文章 ID
+- 返回参数：
+    - code: 状态码
+    - data: 文章详情
+        - articleID: 文章 ID
+        - title: 文章标题
+        - content: 文章内容
+        - cover: 文章封面
+        - createTime: 文章创建时间
+        - updateTime: 文章更新时间
+        - likeCount: 文章点赞数
+        - commentCount: 文章评论数
+        - viewCount: 文章浏览数
+        - isTop: 是否置顶
+        - isPublish: 是否发布
